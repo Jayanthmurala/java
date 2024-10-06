@@ -30,20 +30,28 @@ package Day_4;
 public class GoalParser {
     public String interpret(String command) {
         StringBuffer in = new StringBuffer();
-        for (int i = 0; i < command.length(); i++) {
-            if (command.charAt(i)=='(') {
-                if (command.charAt(i+1)==')') {
-                    in.append("o");
-                }else{
+        int i = 0; // Using a single index variable to iterate through the string
+
+        while (i < command.length()) {
+            if (command.charAt(i) == 'G') {
+                in.append('G');
+                i++; // Move to the next character
+            } else if (command.charAt(i) == '(') {
+                if (command.charAt(i + 1) == ')') {
+                    in.append('o');
+                    i += 2; // Skip over "()" 
+                } else {
                     in.append("al");
+                    i += 4; // Skip over "(al)"
                 }
             }
-            in.append(command.charAt(i));
         }
         return in.toString();
     }
+
+
     public static void main(String[] args) {
-        String g = "G()(al)";
+        String g = "(al)G(al)()()G";
         GoalParser gg = new GoalParser();
         System.out.println(gg.interpret(g));
     }
