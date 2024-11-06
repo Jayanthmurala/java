@@ -5,7 +5,7 @@ public class Prime {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter a number: ");
         int num = in.nextInt();
-        for (int i = 2; i <= num; i++) {
+        for (int i = 1; i <= num; i++) {
             int divisorCount = 0; 
             for (int j = 2; j < i; j++) {
                 if (i % j == 0) {  
