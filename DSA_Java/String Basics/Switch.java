@@ -1,37 +1,40 @@
-import java.util.Scanner;
+package GeekforGeek;
+
+import java.util.List;
+
 public class Switch {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter num 1: ");
-        int a = sc.nextInt();
-        System.out.print("Enter num 1: ");
-        int b = sc.nextInt();
-        System.out.println("1.+\n2.-\n3.*\n4./\n5.%");
-        System.out.println("Selet from above choose");
-        int ip= sc.nextInt();
-    
-      switch (ip) {
-        case 1:
-          System.out.println(a+b);
-          break;
-        case 2:
-          System.out.println(a-b);
-          break;
-        case 3:
-          System.out.println(a*b);
-          break;
-        case 4:
-          System.out.println(a/b);
-          break;
-        case 5:
-          System.out.println(a%b);
-          break;
-        default:
-          System.out.println("invalied input");
-          break;
-   
-      }
-      sc.close();
+        static double switchCase(int choice, List<Double> arr){
+        // code here
+        switch(choice){
+            case 1 :
+                double j =Math.PI *Math.pow(arr.get(0),2);
+                return j;
+                // break;
+            
+            case 2 :
+                return (arr.get(0)*arr.get(1));     
+            default:
+             return -1;
+        }
     }
-  }
-  
+// class GFG{
+        // public static void main(String args[])throws IOException
+//         {
+//             BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+//             int t = Integer.parseInt(in.readLine());
+//             while(t-- > 0){
+//                 int choice = Integer.parseInt(in.readLine());
+//                 String a[] = in.readLine().trim().split("\\s+");
+//                 List<Double> arr = new ArrayList<Double>();
+//                 for(int i = 0;i < choice;i++)
+//                     arr.add(Double.parseDouble(a[i]));
+                
+//                 Switch ob = new Switch();
+//                 if(choice == 1)
+//                     System.out.println(String.format("%.2f", ob.switchCase(choice, arr)));
+//                 else
+//                     System.out.println((int)ob.switchCase(choice, arr));
+//             }
+//         }
+//     }
+}
